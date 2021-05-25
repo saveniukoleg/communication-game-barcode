@@ -162,11 +162,11 @@
                         let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoots[i], {
                             type: "barcode", barcodeValue: patternBarcode[i],
                         })
-                        mesh11 = new THREE.Mesh(new THREE.PlaneBufferGeometry(1, 1, 4, 4),
-                                               new THREE.MeshBasicMaterial({ color: 'white', side: THREE.DoubleSide }));
+                        mesh11 = new THREE.Mesh(new THREE.PlaneBufferGeometry(1, 1),
+                                               new THREE.MeshBasicMaterial({ color: '#fff' }));
                         // Поворачиваем плоскость
                         mesh11.rotation.x = -Math.PI / 2;
-                        mesh11.position.y = 0.005;
+                        mesh11.position.y = 0.08;
                         // Добавляем плоскость в контейнер
                         markerRoots[i].add(mesh11);
                         barcodesID.push(patternBarcode[i]);
@@ -201,18 +201,20 @@
                             break;
                         // Если контент под маркер это изображение
                         case 'image':
-                            // Объявляем плоскость под изображение
-                            let geometry1 = new THREE.PlaneBufferGeometry(1, 1, 4, 4);
-                            // Загружаем изображение
-                            let loader = new THREE.TextureLoader();
-                            let texture = loader.load(`${imageFiles[i]}`, render);
-                            let material1 = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
-                            mesh1 = new THREE.Mesh(geometry1, material1);
-                            // Поворачиваем плоскость
-                            mesh1.rotation.x = -Math.PI / 2;
-                            mesh1.position.y = 0.01;
-                            // Добавляем плоскость в контейнер
-                            markerRoots[i].add(mesh1);
+                            if (imageFiles[i]) {
+                                // Объявляем плоскость под изображение
+                                let geometry1 = new THREE.PlaneBufferGeometry(1, 1, 4, 4);
+                                // Загружаем изображение
+                                let loader = new THREE.TextureLoader();
+                                let texture = loader.load(`${imageFiles[i]}`, render);
+                                let material1 = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+                                mesh1 = new THREE.Mesh(geometry1, material1);
+                                // Поворачиваем плоскость
+                                mesh1.rotation.x = -Math.PI / 2;
+                                mesh1.position.y = 0.12;
+                                // Добавляем плоскость в контейнер
+                                markerRoots[i].add(mesh1);
+                            }
                             break;
                         // Если контент под маркер это видео
                         case 'video':
@@ -242,6 +244,7 @@
                             mesh2 = new THREE.Mesh(geometry2, material2);
                             // Поворачиваем плоскость
                             mesh2.rotation.x = -Math.PI / 2;
+                            mesh2.position.y = 0.12;
                             // Добавляем плоскость в контейнер
                             markerRoots[i].add(mesh2);
                             break;
