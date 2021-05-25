@@ -5,10 +5,10 @@
           <title>Communication Game</title>
           <!-- Добавляем необходимые библиотеки -->
           <!-- Библиотека three.js -->
-          <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
-          <!-- <script src='js/three.js'></script>
+<!--           <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script> -->
+          <script src='js/three.js'></script>
           <script src='js/OBJLoader.js'></script>
-          <script src='js/MTLLoader.js'></script> -->
+          <script src='js/MTLLoader.js'></script>
           <!-- Библиотека tween.js -->
           <script src="js/tween.umd.js"></script>
           <!-- Добавляем jsartookit -->
@@ -125,10 +125,10 @@
                   
                   // Массив имён файлов .patt. Массив заполняется в порядке добавления маркеров
                   // если вместо .patt был добавлен баркод, на его место в массив добавляется пустая строка
-                  const patternNames = ["pattern-1.patt" ,"pattern-2.patt" ,"pattern-3.patt" ,"pattern-4.patt" ,"pattern-5.patt" ,"pattern-6.patt"];
+                  const patternNames = ["" ,"" ,"" ,"" ,"" ,""];
                   // Maссив баркодов, заполняется одновременно с массивом паттернов
                   // если вместо баркода был добавлен .patt, на его место в массив добавляется -1
-                  const patternBarcode = [-1 ,-1 ,-1 ,-1 ,-1 ,-1];
+                  const patternBarcode = [15 ,16 ,17 ,18 ,19 ,20];
                   // Массив типов контента для каждого маркера, заполняется значиями: изображение, модель, видео
                   const modes = ["" ,"" ,"" ,"" ,"" ,""];
                   // Массив файлов моделей, если нет модели будет добавлена пустая строка
