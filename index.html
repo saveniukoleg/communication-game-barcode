@@ -129,7 +129,7 @@
                   // если вместо баркода был добавлен .patt, на его место в массив добавляется -1
                   const patternBarcode = [15 ,16 ,17 ,18 ,19 ,20];
                   // Массив типов контента для каждого маркера, заполняется значиями: изображение, модель, видео
-                  const modes = ["image" ,"video" ,"image" ,"image" ,"image" ,"image"];
+                  const modes = ["image" ,"video" ,"" ,"" ,"" ,""];
                   // Массив файлов моделей, если нет модели будет добавлена пустая строка
                   const modelFiles = ["" ,"" ,"" ,"" ,"" ,""];
                   // Массив файлов изображений, если нет изображения будет добавлена пустая строка
@@ -168,6 +168,7 @@
                         mesh11.rotation.x = -Math.PI / 2;
                         mesh11.position.y = 0.08;
                         // Добавляем плоскость в контейнер
+                        if (modes[i] === 'video' || modes[i] === 'video') mesh11.visible = false;
                         markerRoots[i].add(mesh11);
                         barcodesID.push(patternBarcode[i]);
                     }
