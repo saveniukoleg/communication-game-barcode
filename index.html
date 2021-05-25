@@ -162,14 +162,6 @@
                         let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoots[i], {
                             type: "barcode", barcodeValue: patternBarcode[i],
                         })
-                        mesh11 = new THREE.Mesh(new THREE.PlaneBufferGeometry(1, 1),
-                                               new THREE.MeshBasicMaterial({ color: '#fff' }));
-                        // Поворачиваем плоскость
-                        mesh11.rotation.x = -Math.PI / 2;
-                        mesh11.position.y = 0.08;
-                        // Добавляем плоскость в контейнер
-                        if (modes[i] === 'video' || modes[i] === 'video') mesh11.visible = false;
-                        markerRoots[i].add(mesh11);
                         barcodesID.push(patternBarcode[i]);
                     }
     
@@ -212,7 +204,6 @@
                                 mesh1 = new THREE.Mesh(geometry1, material1);
                                 // Поворачиваем плоскость
                                 mesh1.rotation.x = -Math.PI / 2;
-                                mesh1.position.y = 0.15;
                                 // Добавляем плоскость в контейнер
                                 markerRoots[i].add(mesh1);
                             }
@@ -245,7 +236,6 @@
                             mesh2 = new THREE.Mesh(geometry2, material2);
                             // Поворачиваем плоскость
                             mesh2.rotation.x = -Math.PI / 2;
-                            mesh2.position.y = 0.15;
                             // Добавляем плоскость в контейнер
                             markerRoots[i].add(mesh2);
                             break;
@@ -260,13 +250,13 @@
                             markerRoots[i].add(controller);
                             break;
                         default:
-                            // Если никакого контента добавленно не было, добавляем обычный красный куб 1х1х1
-                            let mesh = new THREE.Mesh(
-                                new THREE.CubeGeometry(1, 1, 1),
-                                new THREE.MeshBasicMaterial({ color: 'red', transparent: true, opacity: 0.5 })
-                            );
-                            mesh.position.y = 0.5;
-                            markerRoots[i].add(mesh);
+                            // Если никакого контента добавленно не было, добавляем белую плоскость
+                            mesh11 = new THREE.Mesh(new THREE.PlaneBufferGeometry(1, 1),
+                                                new THREE.MeshBasicMaterial({ color: '#fff' }));
+                            // Поворачиваем плоскость
+                            mesh11.rotation.x = -Math.PI / 2;
+                            // Добавляем плоскость в контейнер
+                            markerRoots[i].add(mesh11);
                             break;
                     }
     
