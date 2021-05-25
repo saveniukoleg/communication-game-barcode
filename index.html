@@ -129,15 +129,15 @@
                   // если вместо баркода был добавлен .patt, на его место в массив добавляется -1
                   const patternBarcode = [15 ,16 ,17 ,18 ,19 ,20];
                   // Массив типов контента для каждого маркера, заполняется значиями: изображение, модель, видео
-                  const modes = ["image" ,"image" ,"image" ,"image" ,"image" ,"image"];
+                  const modes = ["image" ,"video" ,"image" ,"image" ,"image" ,"image"];
                   // Массив файлов моделей, если нет модели будет добавлена пустая строка
                   const modelFiles = ["" ,"" ,"" ,"" ,"" ,""];
                   // Массив файлов изображений, если нет изображения будет добавлена пустая строка
                   const imageFiles = ["pattern-inner-kanji.png" ,"" ,"" ,"" ,"" ,""];
                   // Массив файлов видео, если нет видео будет добавлена пустая строка
-                  const videoFiles = ["" ,"" ,"" ,"" ,"" ,""];
+                  const videoFiles = ["" ,"sintel.mp4" ,"" ,"" ,"" ,""];
                   // Массив файлов аудио, если нет аудио будет добавлена пустая строка
-                  const audioFiles = ["1.mp3" ,"2.mp3" ,"3.mp3" ,"4.mp3" ,"5.mp3" ,"6.mp3"];
+                  const audioFiles = ["1.mp3" ,"" ,"3.mp3" ,"4.mp3" ,"5.mp3" ,"6.mp3"];
                   // Массив опций повтора аудио и видео контента, по дефолту для всех будет false
                   const repeatOptions = ["true" ,"true" ,"true" ,"true" ,"true" ,"true"];
   
@@ -211,7 +211,7 @@
                                 mesh1 = new THREE.Mesh(geometry1, material1);
                                 // Поворачиваем плоскость
                                 mesh1.rotation.x = -Math.PI / 2;
-                                mesh1.position.y = 0.12;
+                                mesh1.position.y = 0.15;
                                 // Добавляем плоскость в контейнер
                                 markerRoots[i].add(mesh1);
                             }
