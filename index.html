@@ -133,7 +133,7 @@
                   // Массив файлов моделей, если нет модели будет добавлена пустая строка
                   const modelFiles = ["" ,"" ,"" ,"" ,"" ,""];
                   // Массив файлов изображений, если нет изображения будет добавлена пустая строка
-                  const imageFiles = ["" ,"" ,"" ,"" ,"" ,""];
+                  const imageFiles = ["pattern-inner-kanji.png" ,"" ,"" ,"" ,"" ,""];
                   // Массив файлов видео, если нет видео будет добавлена пустая строка
                   const videoFiles = ["" ,"" ,"" ,"" ,"" ,""];
                   // Массив файлов аудио, если нет аудио будет добавлена пустая строка
@@ -162,6 +162,13 @@
                         let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoots[i], {
                             type: "barcode", barcodeValue: patternBarcode[i],
                         })
+                        mesh11 = new THREE.Mesh(new THREE.PlaneBufferGeometry(1, 1, 4, 4),
+                                               new THREE.MeshBasicMaterial({ color: 'white', side: THREE.DoubleSide }));
+                        // Поворачиваем плоскость
+                        mesh11.rotation.x = -Math.PI / 2;
+                        mesh11.position.y = 0.005;
+                        // Добавляем плоскость в контейнер
+                        markerRoots[i].add(mesh11);
                         barcodesID.push(patternBarcode[i]);
                     }
     
@@ -203,6 +210,7 @@
                             mesh1 = new THREE.Mesh(geometry1, material1);
                             // Поворачиваем плоскость
                             mesh1.rotation.x = -Math.PI / 2;
+                            mesh1.position.y = 0.01;
                             // Добавляем плоскость в контейнер
                             markerRoots[i].add(mesh1);
                             break;
