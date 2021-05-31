@@ -129,11 +129,11 @@
                   // если вместо баркода был добавлен .patt, на его место в массив добавляется -1
                   const patternBarcode = [15 ,16 ,17 ,18 ,19 ,20];
                   // Массив типов контента для каждого маркера, заполняется значиями: изображение, модель, видео
-                  const modes = ["image" ,"" ,"" ,"" ,"" ,""];
+                  const modes = ["image" ,"image" ,"image" ,"" ,"" ,""];
                   // Массив файлов моделей, если нет модели будет добавлена пустая строка
                   const modelFiles = ["" ,"" ,"" ,"" ,"" ,""];
                   // Массив файлов изображений, если нет изображения будет добавлена пустая строка
-                  const imageFiles = ["pattern-inner-kanji.png" ,"" ,"" ,"" ,"" ,""];
+                  const imageFiles = ["1.jpg" ,"2.jpg" ,"3.jpg" ,"" ,"" ,""];
                   // Массив файлов видео, если нет видео будет добавлена пустая строка
                   const videoFiles = ["" ,"" ,"" ,"" ,"" ,""];
                   // Массив файлов аудио, если нет аудио будет добавлена пустая строка
@@ -196,7 +196,7 @@
                         case 'image':
                             if (imageFiles[i]) {
                                 // Объявляем плоскость под изображение
-                                let geometry1 = new THREE.PlaneBufferGeometry(1, 1, 4, 4);
+                                let geometry1 = new THREE.PlaneBufferGeometry(3.5, 2, 4, 4);
                                 // Загружаем изображение
                                 let loader = new THREE.TextureLoader();
                                 let texture = loader.load(`${imageFiles[i]}`, render);
